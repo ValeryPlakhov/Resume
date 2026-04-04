@@ -39,27 +39,27 @@ const defaultSectionId = navigation[0].id
 
 const profileFacts = [
   { label: 'Направление', value: '15.03.06 Мехатроника и робототехника' },
-  { label: 'Обучение', value: 'ДГТУ, 2023-2027, 3 курс' },
-  { label: 'Формат', value: 'Junior-позиция, проектная работа' },
+  { label: 'Обучение', value: 'ДГТУ, 3 курс' },
+  { label: 'Формат', value: 'Junior / проектная работа' },
 ]
 
 const aboutParagraphs = [
-  'Я студент 3 курса мехатроники и робототехники в ДГТУ. Работаю на стыке fullstack, CV/ML, embedded и робототехники и люблю собирать системы целиком.',
-  'Быстро поднимаю интерфейс, API, модель и окружение, а затем довожу решение до рабочего состояния. Основной стек: Python, JavaScript, C, FastAPI, React, OpenCV, PyTorch, TensorFlow, ROS2, Docker.',
+  'Студент 3 курса ДГТУ. Работаю на стыке fullstack, CV/ML, embedded и робототехники.',
+  'Собираю решения целиком: интерфейс, API, модель, окружение и интеграция с оборудованием.',
 ]
 
 const summaryCards = [
   {
     title: 'Сильная связка',
-    text: 'Интерфейс, API, модель, железо и деплой без потери контекста.',
+    text: 'Интерфейс, API, модель и оборудование в одной системе.',
   },
   {
     title: '3 проекта в CV/ML',
-    text: 'U-Net, YOLO/OpenCV и задачи на семантическую близость текстов.',
+    text: 'U-Net, YOLO/OpenCV и семантический анализ текста.',
   },
   {
     title: 'Серверная практика',
-    text: 'Свой Ubuntu-сервер: VPN, Docker, деплой и поддержка прототипов.',
+    text: 'Ubuntu Server, VPN, Docker и деплой прототипов.',
   },
 ]
 
@@ -68,7 +68,7 @@ const skillGroups = [
     id: 'fullstack',
     title: 'Fullstack и backend-разработка',
     icon: 'code-slash',
-    description: 'Веб-интерфейсы и API для инженерных задач.',
+    description: 'Разработка веб-интерфейсов и API для инженерных задач.',
     items: ['Python', 'JavaScript', 'C', 'FastAPI', 'React', 'Vite', 'CSS'],
   },
   {
@@ -82,60 +82,68 @@ const skillGroups = [
     id: 'robotics',
     title: 'Embedded и робототехника',
     icon: 'motherboard',
-    description: 'Платы, C для embedded и интеграция с железом.',
+    description: 'Работа с платами, C для embedded и интеграция с оборудованием.',
     items: ['Arduino', 'Raspberry Pi', 'Jetson', 'STM32', 'CMSIS', 'HAL', 'ROS2 Jazzy', 'Nav2', 'SLAM'],
   },
   {
     id: 'infra',
     title: 'Инфраструктура и серверы',
     icon: 'server',
-    description: 'Linux, сервисы, контейнеры и деплой.',
+    description: 'Linux, сервисы, контейнеры и развёртывание.',
     items: ['Docker', 'Ubuntu Server', 'VPN', 'Деплой', 'Git', 'Linux'],
   },
 ]
 
-const experienceStats = [
-  { label: 'CV/ML-проекты', value: '3' },
-  { label: 'Хакатоны', value: '2' },
-  { label: 'Командные кейсы', value: '2' },
-  { label: 'Инфраструктура', value: 'Ubuntu / Docker / VPN' },
-]
-
 const caseStudies = [
   {
-    title: 'Поиск печатей на документах',
-    meta: 'PyTorch / U-Net / CV',
-    text: 'Собрал пайплайн для поиска и сегментации печатей на документах: данные, обучение и доводка качества.',
+    title: 'Сегментация печатей на документах',
+    meta: 'CV / PyTorch / U-Net',
+    text: 'Кейс по компьютерному зрению: подготовка данных, обучение модели и сегментация печатей на документах.',
     stack: ['Python', 'PyTorch', 'U-Net', 'OpenCV'],
   },
   {
-    title: 'CV-агент для Counter-Strike',
-    meta: 'Пет-проект / OpenCV / YOLO',
-    text: 'Исследовательский прототип CV-агента, который понимает сцену и реагирует на происходящее по изображению.',
+    title: 'CV-анализ сцены в Counter-Strike',
+    meta: 'Личный кейс / OpenCV / YOLO',
+    text: 'Прототип, который анализирует игровую сцену по изображению и определяет события в кадре.',
     stack: ['Python', 'OpenCV', 'YOLO', 'CV'],
   },
   {
-    title: 'TitanIT: поиск людей по интересам',
-    meta: 'Junior-кейс / семантический поиск',
-    text: 'Командный кейс на поиск людей по интересам по коротким описаниям с учетом смысла, а не только совпадения слов.',
+    title: 'TitanIT: семантический поиск по интересам',
+    meta: 'Командный кейс / NLP',
+    text: 'Решение для поиска людей по интересам на основе коротких описаний с учётом смысла текста.',
     stack: ['Python', 'Семантическая близость', 'NLP', 'Хакатон'],
+    githubHref: 'https://github.com/CommitDestroyer/TiTaNiT',
   },
   {
-    title: 'РНИИРС: отслеживание спутников в реальном времени',
-    meta: 'Middle-кейс / система реального времени',
-    text: 'Командный кейс по отслеживанию спутников в реальном времени. Поднимал часть инфраструктуры на своем сервере и помогал собрать рабочий контур решения.',
+    title: 'РНИИРС: трекинг спутников в реальном времени',
+    meta: 'Командный кейс / Real-time',
+    text: 'Участвовал в разработке решения для отслеживания спутников в реальном времени: инфраструктура, сервер и рабочий контур.',
     stack: ['Реальное время', 'Ubuntu Server', 'Командная работа', 'Хакатон'],
+    githubHref: 'https://github.com/YORMOMSLOVER/Hakk',
+  },
+  {
+    title: 'Грядка: Android-приложение для фермерского e-commerce',
+    meta: 'Mobile / Kotlin / Android',
+    text: 'Мобильный кейс: приложение на Kotlin для покупки фермерской продукции напрямую у производителя.',
+    stack: ['Kotlin', 'Android', 'E-commerce', 'Mobile'],
+    githubHref: 'https://github.com/ohFerks/EcomApp',
+  },
+  {
+    title: 'Подводный робот для очистки корпуса судна',
+    meta: 'Робототехника / Embedded',
+    text: 'Концепт подводного робота для удаления слизи и биологических отложений с подводной части корпуса судна.',
+    stack: ['Робототехника', 'Embedded', 'CAD', 'Механика'],
   },
 ]
 
 const contactHighlights = [
   {
     title: 'Что ищу',
-    text: 'Junior-позицию на стыке backend, CV/ML, embedded и робототехники.',
+    text: 'Junior-позицию на стыке backend-разработки, CV/ML, embedded-систем и робототехники.',
   },
   {
     title: 'Где полезен',
-    text: 'Когда нужен человек, который может связать интерфейс, API, модель, сервер и железо в рабочую систему.',
+    text: 'В проектах, где важно связать интерфейс, API, модель, сервер и оборудование в рабочую систему.',
   },
 ]
 
@@ -166,12 +174,16 @@ function resolveSectionFromHash(hash) {
 
 function resolveInitialTheme() {
   if (typeof window === 'undefined') {
-    return 'light'
+    return 'dark'
   }
 
   const savedTheme = window.localStorage.getItem(themeStorageKey)
 
-  return savedTheme === 'dark' ? 'dark' : 'light'
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    return savedTheme
+  }
+
+  return 'dark'
 }
 
 function ContactCard({ contact }) {
@@ -280,6 +292,12 @@ function App() {
       window.history.replaceState(null, '', nextHash)
     }
 
+    const shouldAutoScroll = window.matchMedia('(max-width: 1199px)').matches
+
+    if (!shouldAutoScroll) {
+      return
+    }
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
     activeSectionRef.current?.scrollIntoView({
@@ -290,6 +308,7 @@ function App() {
 
   useEffect(() => {
     if (activeSection === displaySection) {
+      setSectionPhase('enter')
       return undefined
     }
 
@@ -341,7 +360,7 @@ function App() {
 
               <div className="text-center">
                 <h3 className="profile-name">Валерий Плахов</h3>
-                <p className="profile-role">3 курс, мехатроника и робототехника, ДГТУ</p>
+                <p className="profile-role">3 курс, ДГТУ</p>
                 <span className="status-badge">Junior-разработчик</span>
               </div>
 
@@ -385,9 +404,7 @@ function App() {
         </div>
 
         <p className="lead-copy block-offset">
-          Базовый принцип простой: если задача требует и API, и модель, и железо, и
-          деплой, мне комфортно не терять контекст между слоями и быстро собирать все
-          в одну рабочую систему.
+          Собираю инженерные решения, где нужно связать API, модель, оборудование и деплой.
         </p>
 
         <div className="summary-grid block-offset">
@@ -421,18 +438,14 @@ function App() {
         <div className="section-head">
           <div>
             <p className="section-kicker text-tight">Кейсы</p>
-            <h2 className="section-title">Практика, где есть код, система и результат</h2>
+            <h2 className="section-title">Практические кейсы</h2>
           </div>
         </div>
 
-        <div className="stats-grid block-offset">
-          {experienceStats.map((item) => (
-            <div key={item.label} className="stat-card">
-              <small>{item.label}</small>
-              <strong>{item.value}</strong>
-            </div>
-          ))}
-        </div>
+        <p className="lead-copy block-offset">
+          Командные и личные кейсы из CV/ML, mobile и real-time задач. В каждом из
+          них я участвовал в разработке и сборке рабочего решения.
+        </p>
 
         <div className="summary-grid block-offset">
           {caseStudies.map((item) => (
@@ -448,6 +461,19 @@ function App() {
                   </span>
                 ))}
               </div>
+
+              {item.githubHref ? (
+                <a
+                  className="project-link"
+                  href={item.githubHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Открыть GitHub-репозиторий проекта ${item.title}`}
+                  title="Открыть GitHub"
+                >
+                  <i className="bi bi-github" />
+                </a>
+              ) : null}
             </article>
           ))}
         </div>
@@ -484,10 +510,7 @@ function App() {
         </div>
 
         <p className="lead-copy block-offset">
-          Ищу junior-позицию, где можно брать инженерные задачи на стыке backend,
-          CV/ML, embedded и робототехники. Особенно интересны проекты, в которых
-          нужно быстро собрать прототип, связать несколько технологий и довести
-          систему до рабочего состояния.
+          Ищу junior-позицию на стыке backend, CV/ML, embedded и робототехники.
         </p>
 
         <div className="summary-grid summary-grid-2col block-offset-sm">
