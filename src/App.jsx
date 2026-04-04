@@ -1,5 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 
+const assetBaseUrl = import.meta.env.BASE_URL
+
+function resolveAssetUrl(path) {
+  return `${assetBaseUrl}${path.replace(/^\/+/, '')}`
+}
+
 const contacts = [
   {
     label: 'Почта',
@@ -24,7 +30,7 @@ const contacts = [
   },
 ]
 
-const profilePhoto = '/profile-photo-square.png'
+const profilePhoto = resolveAssetUrl('profile-photo-square.png')
 const themeStorageKey = 'resume-theme'
 
 const navigation = [
@@ -152,16 +158,16 @@ const certificates = [
     title: 'Хакатон ОСЕНЬ 2025',
     meta: 'XVII форум программных разработчиков Ростова-на-Дону',
     text: 'Сертификат участника. Команда «Invalid syntax», 24-26 октября 2025.',
-    href: '/certificates/hackathon-autumn-2025-valery-plakhov.pdf',
-    preview: '/certificates/hackathon-autumn-2025-valery-plakhov.png',
+    href: resolveAssetUrl('certificates/hackathon-autumn-2025-valery-plakhov.pdf'),
+    preview: resolveAssetUrl('certificates/hackathon-autumn-2025-valery-plakhov.png'),
     icon: 'award',
   },
   {
     title: 'Хакатон ВЕСНА 2026',
     meta: 'XVIII форум программных разработчиков Ростова-на-Дону',
     text: 'Сертификат участника. Команда «AdventureTime», 20-22 марта 2026.',
-    href: '/certificates/hackathon-spring-2026-valery-plakhov.pdf',
-    preview: '/certificates/hackathon-spring-2026-valery-plakhov.png',
+    href: resolveAssetUrl('certificates/hackathon-spring-2026-valery-plakhov.pdf'),
+    preview: resolveAssetUrl('certificates/hackathon-spring-2026-valery-plakhov.png'),
     icon: 'patch-check',
   },
 ]
