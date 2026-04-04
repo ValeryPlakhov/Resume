@@ -177,7 +177,7 @@ function resolveInitialTheme() {
 function ContactCard({ contact }) {
   return (
     <a
-      className="contact-card h-100"
+      className="contact-card full-height"
       href={contact.href}
       target={contact.external ? '_blank' : undefined}
       rel={contact.external ? 'noopener noreferrer' : undefined}
@@ -196,7 +196,7 @@ function ContactCard({ contact }) {
 function CertificateCard({ certificate }) {
   return (
     <a
-      className="project-card certificate-card h-100"
+      className="project-card certificate-card full-height"
       href={certificate.href}
       target="_blank"
       rel="noopener noreferrer"
@@ -320,19 +320,19 @@ function App() {
 
   const visibleSections = {
     profile: (
-      <section id="profile" className="neo-panel p-4 p-lg-5 resume-section">
+      <section id="profile" className="neo-panel shell-pad shell-pad-section resume-section">
         <div className="section-head">
           <div>
-            <p className="section-kicker mb-1">Профиль</p>
-            <h2 className="section-title mb-0">
+            <p className="section-kicker text-tight">Профиль</p>
+            <h2 className="section-title">
               Fullstack, CV/ML и embedded
             </h2>
           </div>
         </div>
 
-        <div className="row g-4 mt-1">
-          <div className="col-12 col-lg-5">
-            <div className="neo-inset profile-card h-100">
+        <div className="content-grid content-grid-profile layout-gap layout-top-offset">
+          <div>
+            <div className="neo-inset profile-card full-height">
               <div className="avatar-ring">
                 <div className="avatar-core">
                   <img className="avatar-photo" src={profilePhoto} alt="Фото Валерия Плахова" />
@@ -356,16 +356,16 @@ function App() {
             </div>
           </div>
 
-          <div className="col-12 col-lg-7">
+          <div>
             {aboutParagraphs.map((paragraph) => (
-              <p key={paragraph} className="lead-copy mb-3">
+              <p key={paragraph} className="lead-copy paragraph-gap">
                 {paragraph}
               </p>
             ))}
 
-            <div className="summary-grid mt-4">
+            <div className="summary-grid block-offset">
               {summaryCards.map((item) => (
-                <article key={item.title} className="summary-card h-100">
+                <article key={item.title} className="summary-card full-height">
                   <strong>{item.title}</strong>
                   <p>{item.text}</p>
                 </article>
@@ -376,24 +376,24 @@ function App() {
       </section>
     ),
     skills: (
-      <section id="skills" className="neo-panel p-4 p-lg-5 resume-section">
+      <section id="skills" className="neo-panel shell-pad shell-pad-section resume-section">
         <div className="section-head">
           <div>
-            <p className="section-kicker mb-1">Стек</p>
-            <h2 className="section-title mb-0">Инструменты, в которых уже есть уверенность</h2>
+            <p className="section-kicker text-tight">Стек</p>
+            <h2 className="section-title">Инструменты, в которых уже есть уверенность</h2>
           </div>
         </div>
 
-        <p className="lead-copy mt-4">
+        <p className="lead-copy block-offset">
           Базовый принцип простой: если задача требует и API, и модель, и железо, и
           деплой, мне комфортно не терять контекст между слоями и быстро собирать все
           в одну рабочую систему.
         </p>
 
-        <div className="summary-grid mt-4">
+        <div className="summary-grid block-offset">
           {skillGroups.map((group) => (
-            <article key={group.id} className="project-card skill-card h-100">
-              <div className="d-flex align-items-start gap-3">
+            <article key={group.id} className="project-card skill-card full-height">
+              <div className="stack-row stack-start gap-3">
                 <span className="icon-shell">
                   <i className={`bi bi-${group.icon}`} />
                 </span>
@@ -404,7 +404,7 @@ function App() {
                 </div>
               </div>
 
-              <div className="tag-cloud mt-3">
+              <div className="tag-cloud block-offset-sm">
                 {group.items.map((item) => (
                   <span key={item} className="skill-chip">
                     {item}
@@ -417,15 +417,15 @@ function App() {
       </section>
     ),
     experience: (
-      <section id="experience" className="neo-panel p-4 p-lg-5 resume-section">
+      <section id="experience" className="neo-panel shell-pad shell-pad-section resume-section">
         <div className="section-head">
           <div>
-            <p className="section-kicker mb-1">Кейсы</p>
-            <h2 className="section-title mb-0">Практика, где есть код, система и результат</h2>
+            <p className="section-kicker text-tight">Кейсы</p>
+            <h2 className="section-title">Практика, где есть код, система и результат</h2>
           </div>
         </div>
 
-        <div className="stats-grid mt-4">
+        <div className="stats-grid block-offset">
           {experienceStats.map((item) => (
             <div key={item.label} className="stat-card">
               <small>{item.label}</small>
@@ -434,14 +434,14 @@ function App() {
           ))}
         </div>
 
-        <div className="summary-grid mt-4">
+        <div className="summary-grid block-offset">
           {caseStudies.map((item) => (
-            <article key={item.title} className="project-card h-100">
+            <article key={item.title} className="project-card full-height">
               <strong>{item.title}</strong>
               <small className="card-meta">{item.meta}</small>
               <p>{item.text}</p>
 
-              <div className="tag-cloud mt-3">
+              <div className="tag-cloud block-offset-sm">
                 {item.stack.map((stackItem) => (
                   <span key={stackItem} className="skill-chip">
                     {stackItem}
@@ -455,19 +455,19 @@ function App() {
       </section>
     ),
     certificates: (
-      <section id="certificates" className="neo-panel p-4 p-lg-5 resume-section">
+      <section id="certificates" className="neo-panel shell-pad shell-pad-section resume-section">
         <div className="section-head">
           <div>
-            <p className="section-kicker mb-1">Сертификаты</p>
-            <h2 className="section-title mb-0">Подтверждение участия в хакатонах и форумах</h2>
+            <p className="section-kicker text-tight">Сертификаты</p>
+            <h2 className="section-title">Подтверждение участия в хакатонах и форумах</h2>
           </div>
         </div>
 
-        <p className="lead-copy mt-4">
+        <p className="lead-copy block-offset">
           Два сертификата с форумов программных разработчиков Ростова-на-Дону.
         </p>
 
-        <div className="summary-grid mt-4">
+        <div className="summary-grid block-offset">
           {certificates.map((certificate) => (
             <CertificateCard key={certificate.title} certificate={certificate} />
           ))}
@@ -475,37 +475,33 @@ function App() {
       </section>
     ),
     contact: (
-      <section id="contact" className="neo-panel p-4 p-lg-5 resume-section">
+      <section id="contact" className="neo-panel shell-pad shell-pad-section resume-section">
         <div className="section-head">
           <div>
-            <p className="section-kicker mb-1">Контакты</p>
-            <h2 className="section-title mb-0">Открыт к сильным инженерным задачам</h2>
+            <p className="section-kicker text-tight">Контакты</p>
+            <h2 className="section-title">Открыт к сильным инженерным задачам</h2>
           </div>
         </div>
 
-        <p className="lead-copy mt-4">
+        <p className="lead-copy block-offset">
           Ищу junior-позицию, где можно брать инженерные задачи на стыке backend,
           CV/ML, embedded и робототехники. Особенно интересны проекты, в которых
           нужно быстро собрать прототип, связать несколько технологий и довести
           систему до рабочего состояния.
         </p>
 
-        <div className="row g-3 mt-2">
+        <div className="summary-grid summary-grid-2col block-offset-sm">
           {contactHighlights.map((item) => (
-            <div key={item.title} className="col-12 col-md-6">
-              <article className="summary-card h-100">
-                <strong>{item.title}</strong>
-                <p>{item.text}</p>
-              </article>
-            </div>
+            <article key={item.title} className="summary-card full-height">
+              <strong>{item.title}</strong>
+              <p>{item.text}</p>
+            </article>
           ))}
         </div>
 
-        <div className="row g-3 mt-2">
+        <div className="summary-grid summary-grid-3col block-offset-sm">
           {contacts.map((contact) => (
-            <div key={contact.label} className="col-12 col-md-4">
-              <ContactCard contact={contact} />
-            </div>
+            <ContactCard key={contact.label} contact={contact} />
           ))}
         </div>
       </section>
@@ -516,17 +512,17 @@ function App() {
   const themeToggleIcon = theme === 'dark' ? 'sun-fill' : 'moon-stars-fill'
 
   return (
-    <div className="app-shell container-xxl py-4 py-xl-5">
-      <header className="neo-panel p-3 p-md-4 topbar">
-        <div className="d-flex align-items-center gap-3 topbar-identity">
+    <div className="app-shell page-shell">
+      <header className="neo-panel shell-pad shell-pad-header topbar">
+        <div className="topbar-identity stack-row gap-3">
           <span className="brand-mark">
             <i className="bi bi-layers-fill" />
           </span>
 
           <div className="topbar-copy">
-            <p className="section-kicker mb-1">Резюме</p>
-            <h1 className="topbar-title mb-1">Валерий Плахов</h1>
-            <p className="topbar-subtitle mb-0">Fullstack, CV/ML, embedded и робототехника</p>
+            <p className="section-kicker text-tight">Резюме</p>
+            <h1 className="topbar-title text-tight">Валерий Плахов</h1>
+            <p className="topbar-subtitle">Fullstack, CV/ML, embedded и робототехника</p>
           </div>
         </div>
 
@@ -546,10 +542,10 @@ function App() {
         </div>
       </header>
 
-      <div className="row g-4 mt-1">
-        <aside className="col-12 col-xl-3">
-          <div className="neo-panel p-3 p-xl-4 sidebar-shell">
-            <nav className="d-grid gap-3" aria-label="Разделы резюме">
+      <div className="layout-grid layout-gap layout-top-offset">
+        <aside className="layout-sidebar">
+          <div className="neo-panel shell-pad shell-pad-sidebar sidebar-shell">
+            <nav className="stack-grid gap-3" aria-label="Разделы резюме">
               {navigation.map((item) => (
                 <button
                   key={item.id}
@@ -568,7 +564,7 @@ function App() {
           </div>
         </aside>
 
-        <main className="col-12 col-xl-9">
+        <main className="layout-main">
           <div ref={activeSectionRef} className={`section-stage section-stage-${sectionPhase}`}>
             {visibleSections[displaySection]}
           </div>
