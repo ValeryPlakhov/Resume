@@ -381,10 +381,7 @@ button {
   cursor: pointer;
   transition:
     transform var(--surface-transition),
-    box-shadow var(--theme-transition),
-    background var(--theme-transition),
-    color var(--theme-transition),
-    border-color var(--theme-transition);
+    color 140ms ease;
 }
 
 .section-link strong {
@@ -392,19 +389,30 @@ button {
   transition: color var(--theme-transition);
 }
 
-.section-link-active {
+.section-link .icon-shell {
+  transition:
+    color 140ms ease,
+    background 140ms ease,
+    border-color 140ms ease;
+}
+
+.section-link-active,
+.section-link-active:hover,
+.section-link-active:focus-visible {
   color: #672028;
-  background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.2), rgba(var(--accent-rgb), 0.36));
+  background: linear-gradient(145deg, rgba(245, 225, 229, 0.98), rgba(236, 208, 214, 0.96));
   box-shadow:
-    -10px -10px 20px rgba(255, 255, 255, 0.78),
-    10px 10px 20px rgba(222, 209, 204, 0.78),
-    0 0 0 1px rgba(var(--accent-rgb), 0.2);
+    inset 7px 7px 14px rgba(143, 77, 89, 0.18),
+    0 0 0 1px rgba(var(--accent-rgb), 0.18),
+    0 10px 24px rgba(var(--accent-rgb), 0.08);
+  transform: translateY(0);
 }
 
 .section-link-active .icon-shell {
+  background: linear-gradient(145deg, rgba(248, 233, 236, 0.98), rgba(241, 220, 225, 0.96));
   box-shadow:
-    inset 5px 5px 12px rgba(222, 209, 204, 0.5),
-    inset -5px -5px 12px rgba(255, 255, 255, 0.68);
+    inset 5px 5px 12px rgba(143, 77, 89, 0.14),
+    0 0 0 1px rgba(var(--accent-rgb), 0.08);
 }
 
 .section-stage {
@@ -506,6 +514,24 @@ button {
     box-shadow var(--theme-transition),
     color var(--theme-transition),
     border-color var(--theme-transition);
+}
+
+.section-link:active,
+.direction-tab:active,
+.btn-neo:active,
+.case-action-link:active,
+.project-link:active {
+  transform: translateY(1px);
+}
+
+.section-link:active,
+.btn-neo:active,
+.direction-tab:active,
+.case-action-link:active,
+.project-link:active {
+  box-shadow:
+    inset 7px 7px 14px rgba(173, 152, 158, 0.42),
+    inset -7px -7px 14px rgba(255, 247, 248, 0.9);
 }
 
 .profile-card {
@@ -760,35 +786,19 @@ button {
     8px 8px 16px rgba(223, 209, 212, 0.78);
   transition:
     transform var(--surface-transition),
-    background var(--theme-transition),
-    box-shadow var(--theme-transition),
-    color var(--theme-transition),
-    border-color var(--theme-transition);
+    color 140ms ease;
 }
 
-.direction-tab-active {
+.direction-tab-active,
+.direction-tab-active:hover,
+.direction-tab-active:focus-visible {
   color: #672028;
-  background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.2), rgba(var(--accent-rgb), 0.36));
+  background: linear-gradient(145deg, rgba(245, 225, 229, 0.98), rgba(236, 208, 214, 0.96));
   box-shadow:
-    -10px -10px 20px rgba(255, 255, 255, 0.78),
-    10px 10px 20px rgba(222, 209, 204, 0.78),
-    0 0 0 1px rgba(var(--accent-rgb), 0.2);
-}
-
-.direction-panel {
-  padding: 1.35rem;
-}
-
-.direction-panel-title {
-  margin: 0.25rem 0 0.75rem;
-  font-family: var(--font-display);
-  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-}
-
-.direction-panel .lead-copy {
-  max-width: none;
+    inset 7px 7px 14px rgba(143, 77, 89, 0.18),
+    0 0 0 1px rgba(var(--accent-rgb), 0.18),
+    0 10px 24px rgba(var(--accent-rgb), 0.08);
+  transform: translateY(0);
 }
 
 .direction-grid {
@@ -935,13 +945,16 @@ html[data-theme="dark"] .icon-shell {
     10px 10px 18px rgba(0, 0, 0, 0.34);
 }
 
-html[data-theme="dark"] .section-link-active {
+html[data-theme="dark"] .section-link-active,
+html[data-theme="dark"] .section-link-active:hover,
+html[data-theme="dark"] .section-link-active:focus-visible {
   color: #ffe7e8;
   background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.3), rgba(74, 22, 29, 0.72));
   box-shadow:
-    -10px -10px 20px rgba(255, 255, 255, 0.02),
-    12px 12px 24px rgba(0, 0, 0, 0.36),
+    inset 7px 7px 14px rgba(0, 0, 0, 0.34),
+    inset -7px -7px 14px rgba(255, 255, 255, 0.03),
     0 0 0 1px rgba(var(--accent-rgb), 0.26);
+  transform: translateY(0);
 }
 
 html[data-theme="dark"] .section-link-active .icon-shell {
@@ -1024,13 +1037,16 @@ html[data-theme="dark"] .direction-tab {
     10px 10px 18px rgba(0, 0, 0, 0.36);
 }
 
-html[data-theme="dark"] .direction-tab-active {
+html[data-theme="dark"] .direction-tab-active,
+html[data-theme="dark"] .direction-tab-active:hover,
+html[data-theme="dark"] .direction-tab-active:focus-visible {
   color: #ffe7e8;
   background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.3), rgba(74, 22, 29, 0.72));
   box-shadow:
-    -10px -10px 20px rgba(255, 255, 255, 0.02),
-    12px 12px 24px rgba(0, 0, 0, 0.36),
+    inset 7px 7px 14px rgba(0, 0, 0, 0.34),
+    inset -7px -7px 14px rgba(255, 255, 255, 0.03),
     0 0 0 1px rgba(var(--accent-rgb), 0.26);
+  transform: translateY(0);
 }
 
 html[data-theme="dark"] .project-link {
@@ -1057,6 +1073,16 @@ html[data-theme="dark"] .case-action-link {
   box-shadow:
     -8px -8px 16px rgba(255, 255, 255, 0.02),
     10px 10px 18px rgba(0, 0, 0, 0.34);
+}
+
+html[data-theme="dark"] .section-link:active,
+html[data-theme="dark"] .btn-neo:active,
+html[data-theme="dark"] .direction-tab:active,
+html[data-theme="dark"] .case-action-link:active,
+html[data-theme="dark"] .project-link:active {
+  box-shadow:
+    inset 7px 7px 14px rgba(0, 0, 0, 0.34),
+    inset -7px -7px 14px rgba(255, 255, 255, 0.03);
 }
 
 .section-link:focus-visible,

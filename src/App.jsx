@@ -52,12 +52,10 @@ const defaultSectionId = navigation[0].id
 const profileFacts = [
   { label: 'Направление', value: '15.03.06 Мехатроника и робототехника' },
   { label: 'Обучение', value: 'ДГТУ, 3 курс' },
-  { label: 'Фокус', value: 'Робототехника' },
-]
+  { label: 'Город', value: 'Ростов-на-Дону' },]
 
 const aboutParagraphs = [
-  'Мне интересны задачи, где важна не отдельная технология, а цельная инженерная система: когда идея проходит путь от концепции и первых решений до работающего прототипа.',
-  'Быстро погружаюсь в новые предметные области, спокойно работаю на стыке нескольких ролей и ценю проекты, где можно не просто сделать часть, а довести результат до рабочего состояния.',
+  'Я студент третьего курса по направлению «Мехатроника и робототехника», специализируюсь на стыке конструирования, электроники и программного обеспечения. В работе я прежде всего ценю командную работу за возможность коллективного поиска эффективных решений и профессионального обмена опытом, который напрямую влияет на качество финального продукта. Обладая навыками решения задач в различных технических областях, я быстро погружаюсь в новые предметные области и сохраняю продуктивность, работая одновременно в нескольких ролях. Для меня особенно важны проекты полного цикла, где есть возможность не просто выполнить часть работы, а довести результат до полностью рабочего состояния. Я нацелен на непрерывный профессиональный рост, готов к решению нестандартных инженерных задач и стремлюсь реализовать свой потенциал в рамках сложных и амбициозных проектов.',
 ]
 
 const skillGroups = [
@@ -66,28 +64,28 @@ const skillGroups = [
     title: 'Программирование и веб-разработка',
     icon: 'code-slash',
     description: 'Разработка сервисов, интерфейсов и рабочих инженерных прототипов.',
-    items: ['Python', 'JavaScript', 'C', 'C++', 'FastAPI', 'React', 'Vite', 'Git', 'Docker', 'Webots'],
+    items: ['Python', 'JavaScript', 'C', 'C++', 'FastAPI', 'React', 'Vite', 'Git', 'Docker', 'ROS2', 'SLAM', 'Webots'],
   },
   {
     id: 'cv-ml',
     title: 'CV и ML',
     icon: 'cpu',
     description: 'Детекция, сегментация, обработка изображений и прикладные пайплайны.',
-    items: ['PyTorch', 'TensorFlow', 'OpenCV', 'Pillow', 'YOLO', 'U-Net'],
+    items: ['PyTorch', 'TensorFlow', 'OpenCV', 'YOLO', 'U-Net'],
   },
   {
     id: 'cad',
     title: 'CAD и моделирование',
     icon: 'bounding-box',
     description: 'Проектирование механики, узлов и компоновки робототехнических систем.',
-    items: ['SolidWorks', 'Fusion 360', 'Компас 3D', 'Matlab'],
+    items: ['SolidWorks', 'Fusion 360', 'Компас 3D', 'MATLAB'],
   },
   {
     id: 'electronics',
     title: 'Электроника и робототехника',
     icon: 'motherboard',
-    description: 'Платы, контроллеры, вычислительные модули и интеграция с оборудованием.',
-    items: ['EasyEDA', 'STM32', 'Arduino', 'Raspberry Pi', 'C', 'C++', 'ROS2', 'SLAM'],
+    description: 'Платы, контроллеры, пайка и практическая работа с электронными узлами.',
+    items: ['EasyEDA', 'STM32', 'ESP32', 'Arduino', 'Raspberry Pi', 'MATLAB', 'Измерительные приборы', 'Пайка', 'Лужение'],
   },
 ]
 
@@ -242,8 +240,8 @@ const recognitionCards = [
   {
     title: 'Награждение на XVI Фестивале науки Юга России',
     meta: 'Ростов Арена / 20 сентября 2025',
-    text: 'Награждение на XVI Фестивале науки Юга России «Наука побеждать». Есть опыт публичной презентации инженерных проектов.',
-    stack: ['Публичное выступление', 'Инженерная презентация', 'Наука и медиа'],
+    text: 'Награждение на XVI Фестивале науки Юга России «Наука побеждать». Есть опыт публичной презентации проектов.',
+    stack: ['Публичное выступление', 'Наука и медиа'],
     action: {
       href: 'https://festivalnauki.sfedu.ru/',
       label: 'Сайт фестиваля',
@@ -261,20 +259,15 @@ const engineeringTracks = [
   {
     id: 'programming',
     label: 'Программирование',
-    kicker: 'Fullstack, CV/ML',
-    description: 'Собираю программную часть инженерных систем целиком: интерфейс, API, обработку данных, компьютерное зрение, контейнеризацию и командную разработку.',
-    chips: ['Python', 'JavaScript', 'C', 'C++', 'FastAPI', 'React', 'Docker', 'Git', 'PyTorch', 'OpenCV', 'Webots'],
     cases: [
       {
         title: 'Сегментация печатей на документах',
-        meta: 'CV / PyTorch / U-Net',
         text: 'Подготовил данные, обучил модель и собрал прикладной пайплайн для выделения печатей на документах.',
         stack: ['Python', 'PyTorch', 'U-Net', 'OpenCV'],
       },
       {
         title: 'Модуль «Умный дом»',
-        meta: 'Raspberry Pi 5 / OpenCV / Arduino',
-        text: 'Разрабатывал позиционирование мобильного робота, систему зрения на OpenCV и обмен данными между Arduino и Raspberry Pi, а также усиливал стабильность системы пайкой и отладкой проводки.',
+        text: 'Разрабатывал позиционирование мобильного робота, систему зрения на OpenCV и обмен данными между Arduino и Raspberry Pi.',
         stack: ['Raspberry Pi 5', 'OpenCV', 'Arduino', 'C/C++'],
         media: {
           type: 'image',
@@ -284,22 +277,20 @@ const engineeringTracks = [
       },
       {
         title: 'РНИИРС: трекинг спутников в реальном времени',
-        meta: 'Командный кейс / Реальное время / Инфраструктура / 2026',
         text: 'Участвовал в сборке серверного и инфраструктурного контура для мониторинга спутников в реальном времени.',
-        stack: ['Ubuntu Server', 'Docker', 'Git', 'Командная разработка', 'Лидер команды'],
+        stack: ['Ubuntu Server', 'Docker', 'Git', 'Командная работа', 'Middle кейс', 'Капитан команды', 'Реальное время', '2026'],
         githubHref: 'https://github.com/YORMOMSLOVER/Hakk',
         certificateHref: resolveAssetUrl('certificates/hackathon-spring-2026-valery-plakhov.pdf'),
         certificateIcon: 'patch-check-fill',
         certificateLabel: 'Открыть сертификат РНИИРС 2026',
       },
       {
-        title: 'TitanIT: семантический поиск по интересам',
-        meta: 'Командный кейс / Семантический поиск / 2025',
+        title: 'TitanIT: поиск людей по интересам',
         text: 'Сделал решение для поиска людей по коротким описаниям с учётом смысловой близости текста.',
-        stack: ['Python', 'Семантический анализ', 'Хакатон', 'Лидер команды'],
+        stack: ['Python', 'Семантический анализ', 'Командная работа', 'Junior кейс', 'Капитан команды', '2025'],
         githubHref: 'https://github.com/CommitDestroyer/TiTaNiT',
         certificateHref: resolveAssetUrl('certificates/hackathon-autumn-2025-valery-plakhov.pdf'),
-        certificateIcon: 'award-fill',
+        certificateIcon: 'patch-check-fill',
         certificateLabel: 'Открыть сертификат TitanIT 2025',
       },
     ],
@@ -307,15 +298,11 @@ const engineeringTracks = [
   {
     id: 'construction',
     label: 'Конструирование',
-    kicker: 'CAD, механика, робототехника',
-    description: 'Проектирую механику и робототехнические узлы: от CAD-модели и компоновки до сборки, испытаний и публичной демонстрации.',
-    chips: ['SolidWorks', 'Fusion 360', 'Компас 3D', 'Matlab', 'Прототипирование'],
     cases: [
       {
-        title: 'Подводный робот для очистки корпуса судна',
-        meta: 'CAD / Корпус / Робототехника',
-        text: 'Моделировал робототехническую платформу для очистки подводной части судна от биообрастания: компоновка корпуса, приводов и технологичность сборки.',
-        stack: ['SolidWorks', 'Fusion 360', 'Компас 3D', 'Механика'],
+        title: 'Подводный робот "РЕМОРА"',
+        text: 'Моделировал робототехническую платформу для очистки подводной части судна от биообрастания: компоновка корпуса, приводов, технологичность сборки и герметизация.',
+        stack: ['SolidWorks', 'Fusion 360', 'Механика', 'Герметизация', 'Магнитные гусеницы'],
         media: {
           type: 'image',
           src: underWaterPreview,
@@ -325,7 +312,7 @@ const engineeringTracks = [
       {
         title: 'Мини-марсоход NASA',
         meta: 'CAD / Рама / Кинематика',
-        text: 'Прорабатывал раму, опоры и компоновку учебного мини-марсохода в духе NASA под наземные испытания.',
+        text: 'Прорабатывал раму, опоры и компоновку мини-марсохода в духе NASA под наземные испытания.',
         stack: ['SolidWorks', 'Кинематика', 'Робототехника', 'Лидер команды'],
         media: {
           type: 'image',
@@ -334,10 +321,9 @@ const engineeringTracks = [
         },
       },
       {
-        title: 'Робот Дионис для сбора винограда',
-        meta: 'Сборка / Испытания / Полевой проект',
-        text: 'Участвовал в сборке и испытаниях робота Дионис для сбора винограда. Проект попал в сюжет ДонТР, где меня показывают в работе.',
-        stack: ['Робототехника', 'Сборка', 'Испытания', 'Командная работа'],
+        title: 'Робот "Дионис"',
+        text: 'Участвовал в сборке и испытаниях робота для сбора винограда. Проект попал в сюжет ДонТР, где меня показывают в работе.',
+        stack: ['Робототехника', 'Сборка', 'Испытания', 'Командная работа', 'Полевой проект'],
         action: {
           href: 'https://dontr.ru/novosti/dionis-na-vinogradnike-donskie-studenty-ispytali-robota-sborshchika-dlya-sbora-urozhaya/',
           label: 'Смотреть сюжет',
@@ -354,36 +340,32 @@ const engineeringTracks = [
   {
     id: 'electronics',
     label: 'Электроника',
-    kicker: 'Платы, контроллеры, интеграция',
-    description: 'Занимаюсь схемами, платами и встраиваемой интеграцией: от EasyEDA и микроконтроллеров до сенсоров, приводов и вычислительных модулей.',
-    chips: ['EasyEDA', 'STM32', 'Arduino', 'Raspberry Pi', 'C', 'C++', 'Matlab', 'ROS2'],
     cases: [
       {
         title: 'Схемы и платы в EasyEDA',
-        meta: 'Платы / датчики / питание',
         text: 'Делаю схемы и разводку учебных и прикладных плат под датчики, питание и исполнительные узлы.',
-        stack: ['EasyEDA', 'Платы', 'Сенсоры', 'Питание'],
+        stack: ['EasyEDA', 'Платы', 'Сенсоры', 'Питание', 'Датчики'],
       },
       {
-        title: 'Интеграция роботов на C/C++',
-        meta: 'STM32 / Raspberry Pi / Сенсоры',
-        text: 'Связываю контроллеры, камеры, приводы и сенсоры в один робототехнический контур.',
-        stack: ['C', 'C++', 'STM32', 'Raspberry Pi'],
+        title: 'Монтаж и пайка электроники',
+        text: 'Паяю и лужу соединения, собираю проводку и повышаю надёжность электрической части робототехнических систем.',
+        stack: ['Пайка', 'Лужение', 'Проводка', 'Сборка'],
       },
       {
-        title: 'Отладка управления и интеграции',
-        meta: 'Matlab / ROS2 / Интеграция',
-        text: 'Использую расчёт и инженерную отладку для проверки логики движения, навигации и поведения робототехнических систем.',
-        stack: ['Matlab', 'ROS2', 'Интеграция'],
+        title: 'Измерения и отладка электроники',
+        text: 'Работаю с измерительными приборами, проверяю питание и сигналы.',
+        stack: ['Осциллограф', 'Мультиметр', 'Логический анализатор', 'Диагностика'],
+      },
+      {
+        title: 'Работа с MCU и одноплатными компьютерами',
+        text: 'Есть практика работы с платами Arduino, ESP32, STM32 и Raspberry Pi 2/4/5 в учебных и инженерных проектах.',
+        stack: ['Arduino', 'ESP32', 'STM32', 'Raspberry Pi'],
       },
     ],
   },
   {
     id: socialTrackId,
     label: 'Социальная активность',
-    kicker: 'Публичные проекты, выступления, награждения',
-    description: 'Есть опыт общественных и публичных инженерных проектов: защита инициатив, взаимодействие с внешними площадками и презентация результатов.',
-    chips: ['Публичная защита', 'Социальный проект', 'Презентация', 'Командная работа'],
     cases: recognitionCards,
   },
 ]
@@ -407,7 +389,7 @@ function resolveSectionFromHash(hash) {
 
 function resolveInitialTheme() {
   if (typeof window === 'undefined') {
-    return 'dark'
+    return 'light'
   }
 
   const savedTheme = window.localStorage.getItem(themeStorageKey)
@@ -416,7 +398,7 @@ function resolveInitialTheme() {
     return savedTheme
   }
 
-  return 'dark'
+  return 'light'
 }
 
 function ContactCard({ contact }) {
@@ -657,8 +639,7 @@ function App() {
 
               <div className="text-center">
                 <h3 className="profile-name">Валерий Плахов</h3>
-                <p className="profile-role">3 курс, ДГТУ</p>
-                <span className="status-badge">Junior-инженер</span>
+                <p className="profile-role"> </p>
               </div>
 
               <div className="facts-list">
@@ -691,10 +672,6 @@ function App() {
           </div>
         </div>
 
-        <p className="lead-copy block-offset">
-          Собираю инженерные решения, где нужно связать API, модель, механику, электронику и развертывание системы.
-        </p>
-
         <div className="summary-grid block-offset">
           {skillGroups.map((group) => (
             <article key={group.id} className="project-card skill-card full-height">
@@ -726,7 +703,7 @@ function App() {
         <div className="section-head">
           <div>
             <p className="section-kicker text-tight">Направления</p>
-            <h2 className="section-title">Программирование, конструирование и электроника</h2>
+            <h2 className="section-title">Направления и активность</h2>
           </div>
         </div>
 
@@ -749,20 +726,6 @@ function App() {
           ))}
         </div>
 
-        <div className="neo-inset direction-panel block-offset-sm">
-          <p className="section-kicker text-tight">{activeTrack.kicker}</p>
-          <h3 className="direction-panel-title">{activeTrack.label}</h3>
-          <p className="lead-copy">{activeTrack.description}</p>
-
-          <div className="tag-cloud block-offset-sm">
-            {activeTrack.chips.map((chip) => (
-              <span key={chip} className="skill-chip">
-                {chip}
-              </span>
-            ))}
-          </div>
-        </div>
-
         <div className="direction-grid block-offset-sm" role="tabpanel">
           {activeTrack.cases.map((item) => (
             <CaseCard key={item.title} item={item} />
@@ -775,21 +738,8 @@ function App() {
         <div className="section-head">
           <div>
             <p className="section-kicker text-tight">Контакты</p>
-            <h2 className="section-title">Открыт к сильным инженерным задачам</h2>
+            <h2 className="section-title">Открыт к инженерным задачам</h2>
           </div>
-        </div>
-
-        <p className="lead-copy block-offset">
-          Ищу junior-позицию на стыке программирования, электроники, CAD и робототехники.
-        </p>
-
-        <div className="summary-grid summary-grid-2col block-offset-sm">
-          {contactHighlights.map((item) => (
-            <article key={item.title} className="summary-card full-height">
-              <strong>{item.title}</strong>
-              <p>{item.text}</p>
-            </article>
-          ))}
         </div>
 
         <div className="summary-grid summary-grid-3col block-offset-sm">
