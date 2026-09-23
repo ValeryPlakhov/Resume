@@ -51,7 +51,7 @@ const defaultSectionId = navigation[0].id
 
 const profileFacts = [
   { label: 'Направление', value: '15.03.06 Мехатроника и робототехника' },
-  { label: 'Обучение', value: 'ДГТУ, 3 курс' },
+  { label: 'Обучение', value: 'ДГТУ, 4 курс' },
   { label: 'Город', value: 'Ростов-на-Дону' },]
 
 const aboutParagraphs = [
